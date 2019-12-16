@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{disglossary}[2014/08/24 Example LaTeX package]
+% for glossaries and key terms
+\RequirePackage[toc, acronym]{glossaries} % trying.
+\makeglossary
+
+
+
+
+\newglossaryentry{maths}
+{
+    name=mathematics,
+    description={Mathematics is what mathematicians do}
+}
+
+\newglossaryentry{latex}
+{
+    name=latex,
+    description={Is a mark up language specially suited for
+scientific documents}
+}
+
+
+\newglossaryentry{formula}
+{
+    name=formula,
+    description={A mathematical expression}
+}
+
+\newglossaryentry{doggos}
+{
+    name=dogs,
+    description={The best thing ever - all dogs.}
+}
+
+%%%% here are the acronyms
+\newacronym{wbd}{WBD}{World's Best Doggo}
+% label, actual acronym, full text
+\newacronym{vgd}{VGD}{Very Good Dog}
+
+\newacronym{lcm}{LCM}{Least Common Multiple}

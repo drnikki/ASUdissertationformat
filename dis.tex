@@ -1,0 +1,140 @@
+\documentclass[12pt,letterpaper]{report}
+% https://graduate.asu.edu/sites/default/files/asu-graduate-college-format-manual.pdf
+
+% for glossaries and key terms - this file (in the folder) provides its own package to keep things tidy. 
+\usepackage{dissglossary}
+
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+
+% this is where the pictures are stored
+\usepackage{graphicx}
+\graphicspath{ {./images/} } 
+
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft} % http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/tocloft/tocloft.pdf
+
+% the styleguide file for ASU specifically.
+\usepackage{asudis}
+
+
+		
+\begin{document}
+%-----------------------front matter
+\pagenumbering{roman}
+\title{My Very Good Title\\ \ \\ Very good Subtitle here too.}
+\author{Nikki Lane Stevens}
+\degreeName{Doctor of Philosophy}
+\defensemonth{April}
+\gradmonth{May}
+\gradyear{2021}
+\chair{My first co-chair, Co-Chair \\ My second co-chair, Co-Chair \\ Member Name \\ Member Name \\ Member Name}		
+\maketitle
+\doublespace
+\include{abstract}
+% dedication
+\dedicationpage{
+  \input{dedication}
+}
+% acknowledgements
+\acknowledgementpage{
+  \input{acknowledgements}
+ }
+%\include{ack}
+\tableofcontents
+% This puts the word "Page" right justified above everything else.
+\addtocontents{toc}{~\hfill Page\par}
+% Asking LaTeX for a new page here guarantees that the LOF is on a separate page
+% after the TOC ends.
+\newpage
+% Making the LOT and LOF "parts" rather than chapters gets them indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
+
+% This gets the headers for the LOT right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
+
+%% for the list of tables, if you need it.
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\listoftables
+\addtocontents{lot}{Table~\hfill Page \par}
+\newpage
+
+%% for the list of tables, if you need it. 
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\listoffigures
+\addtocontents{lof}{Figure~\hfill Page \par}
+\newpage
+
+%% for the list of symbols, if you need it
+\addcontentsline{toc}{part}{LIST OF SYMBOLS}
+\clearpage
+\symbolspage{}
+
+%% for the preface, if you have one.
+\addcontentsline{toc}{part}{PREFACE}
+\clearpage
+\addcontentsline{toc}{part}{GLOSSARY AND TERMS}
+\clearpage
+\addtocontents{toc}{CHAPTER \par}					
+
+%% for the glossary too
+
+
+% the glossary page needs to be down here too.
+\glossarypage{}
+\newpage
+
+% the preface content needs to be down here I think? 
+\prefacepage{
+  \input{preface}
+}
+
+
+\clearpage
+% this line adds the Chapter heading so that the chapters can then exist and get numbered here. 
+
+
+% This gets the headers for the LOF right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
+
+
+%-----------------------body
+\doublespace
+\pagenumbering{arabic}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+
+% SEE - printing them here, the glossaries work. 
+% TODO - why don't they work from within?
+\printglossaries
+
+
+%-----------------------back matter
+{\singlespace
+% Making the references a "part" rather than a chapter gets it indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
+\addcontentsline{toc}{part}{REFERENCES}
+% here for the bibliography, the exported thing needs to be in BetterBibTEX (not latex, I think?) I just know that it's sensitive. 
+
+\bibliographystyle{asudis}
+\bibliography{dis}}
+
+\printglossaries
+\printglossary[type=\acronymtype]
+
+\renewcommand{\chaptername}{APPENDIX}
+\addtocontents{toc}{APPENDIX \par}
+\appendix
+\include{appendix1}
+\addcontentsline{toc}{part}{BIOGRAPHICAL SKETCH}
+\biographicalpage{\\Enter content here.}
+\include{vita}
+\end{document}

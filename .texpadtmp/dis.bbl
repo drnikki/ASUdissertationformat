@@ -1,0 +1,24 @@
+\begin{thebibliography}{3}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[Noble(1979)]{noble1979}
+Noble, D.~F., \emph{America by {{Design}}: {{Science}}, {{Technology}}, and the
+  {{Rise}} of {{Corporate Capitalism}}} ({Oxford University Press}, {Oxford},
+  1979).
+
+\bibitem[Noble and Tynes(2016)]{noble2016a}
+Noble, S.~U. and B.~M. Tynes, eds., \emph{The {{Intersectional Internet}}:
+  {{Race}}, {{Sex}}, {{Class}}, and {{Culture Online}}} ({Peter Lang Inc.,
+  International Academic Publishers}, {New York}, 2016), new edition edition
+  edn.
+
+\bibitem[Stevens and Wernimont(2018)]{stevens2018}
+Stevens, N. and J.~Wernimont, \enquote{Seeing 21st {{Century Data Bleed}}
+  through the 15th {{Century Wound Man}}}, IEEE Technology and Society Magazine
+  \textbf{37}, 4, 46--54 (2018).
+
+\end{thebibliography}
