@@ -15,3 +15,11 @@ First - I moved nearly ALL text to includes so that the main `.tex` file is just
 Second - I need a big glossary and list of terms & symbols.  In it's current state, those don't *quite* work.
 
 Third - I wanted to make sure the contents are formatted according to my style guide - APA. So this importantly diverges from the main ASU format wizard in that way.
+
+## Forthcoming:
+
+- additional tweaks to the internal page contents
+- a reorganization of the files so that looking at the directory is cleaner
+- continuing to modify the glossary to both match APA format and to not be so weird
+- a more meticulous check against APA format
+- and possssibly switching out natbib 
